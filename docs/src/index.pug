@@ -1,0 +1,76 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title Document
+		style
+			include ../css/style.min.css
+	body 
+	.wrapper
+		header.header
+			.container
+				.header-content
+					nav.nav
+						.burger-nav
+							a.logo(href='#')
+								img.logo__icon(src='./assets/logo.svg', alt)
+							img.close__burger(src='./assets/cross.svg', alt)
+						ul.nav-list
+							li.nav-list__item
+								a.nav-list__link(href='#') Just ride
+							li.nav-list__item
+								a.nav-list__link(href='#') About
+							li.nav-list__item
+								a.nav-list__link(href='#') Features
+							li.nav-list__item
+								a.nav-list__link(href='#') Specifications
+							li.nav-list__item
+								a.nav-list__link(href='#') Faq
+							li.nav-burger__btn.nav-list__item
+								button.main__btn.btn.
+
+									Order me
+
+					a.logo(href='#')
+						img.logo__icon(src='./assets/logo.svg', alt)
+					.header-menu
+						.header-menu__info New York, NY 3:48 AM
+						img.header-basket__icon(src='./assets/basket.svg', alt)
+						img.burger(src='./assets/ci_hamburger-lg.svg', alt)
+		section.main
+			.container
+				.main-content
+					h1.main-content__title.title VANMOOF X4
+					.main-content__subtitle.
+
+						Rule the road with the VanMoof x4. Perfect for controlled cruising and longer rides.
+
+					button.main__btn.btn.
+
+						Order me
+
+			.main__img
+				img(src='./assets/header-content.png', alt)
+		.modal
+			.modal-content
+				h2.modal-content__title.
+
+					Join the waitlist
+
+				p.modal-content__info.
+
+					Join the waitlist and get priority access & insider benefits.
+
+				form(action)
+					label.label__email(for='email')
+						| Email
+
+						input.modal__input(name='email' minlength='5', required, type='email' placeholder='Email')
+					label.label__checkbox(for='checbox')
+						input.modal__input-checkbox(required, name='checbox' type='checkbox')
+						div I agree to 
+							a(href='#') privacy policy.
+					button.modal__btn.btn Send me updates
+					img.modal__icon-close(src='./assets/modalClose.svg', alt)
+		script(src='../js/main.js')
