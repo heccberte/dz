@@ -4,6 +4,7 @@ const closeModalBtn = document.querySelector('.modal__icon-close')
 const sendMessageBtn = document.querySelector('.modal__btn')
 const modalContent = document.querySelector('.modal-content')
 const modalInput = document.querySelector('.modal__input')
+const modalCheckbox = document.querySelector('.modal__input-checkbox')
 const navLinks = document.querySelectorAll('.nav-list__link')
 
 const burger = document.querySelector('.burger')
@@ -25,36 +26,22 @@ modal.addEventListener('click', (e) => {
 	}
 })
 
-sendMessageBtn.onclick = btnHandler
+//check form
 
-function btnHandler() {
-	let f = document.forms[0],
-		str;
-	for (let item of f.elements)
-		if (!item.validity.valid) {
-			if (item.validity.patternMismatch) {
-				str = `${item.id}: ${item.validationMessage} ${item.pattern}`
-				
-			}
-				
-			else
-				str = `${item.id}: ${item.validationMessage}`;
-			alert(str);
-			break;
-			
-		} else {
-			modal.classList.remove('modal--show')
+sendMessageBtn.onclick = closeForm
 
-		}
-		
+function closeForm(e) {
+	e.preventDefault();
+	if (modalInput.validity.valid && modalCheckbox.checked) {
+		modal.classList.remove('modal--show')
+	} else if (!modalInput.validity.valid) {
+		alert('Заполните поле Email')
+	} else if (!modalCheckbox.checked) {
+		alert('Поставьте флажок')
+	}
 }
 
-
-
-
-
-
-
+// BURGER
 burger.addEventListener('click', (e) => {
 	nav.classList.add('nav--show')
 })

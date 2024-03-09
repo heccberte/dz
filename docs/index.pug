@@ -5,7 +5,7 @@ html(lang="en")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		title VANMOOF
 		style
-			include ../css/style.min.css
+			include ./css/style.min.css
 	body 
 	.wrapper
 		header.header
@@ -66,9 +66,9 @@ html(lang="en")
 					label.label__email(for='email')
 						| Email
 
-						input.modal__input(name='email' minlength='5', required, type='email' placeholder='Email')
-					label.label__checkbox(for='checbox')
-						input.modal__input-checkbox(required, name='checbox' type='checkbox')
+						input.modal__input(name='email' minlength='5', required, type='email', placeholder='Email')
+					label.label__checkbox(for='checkbox')
+						input.modal__input-checkbox(required, name='checkbox', type='checkbox',)
 						div I agree to 
 							a(href='#') privacy policy.
 					button.modal__btn.btn Send me updates
