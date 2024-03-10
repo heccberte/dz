@@ -53,6 +53,14 @@ body {
 }
 
 .header {
+  height: 100vh;
+  background-image: url("./assets/header-content.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top 69px right 0;
+}
+
+.header-nav {
   border-bottom: 1px solid rgba(212, 209, 199, 0.4);
 }
 
@@ -155,6 +163,7 @@ body {
 .main-content {
   padding: 126px 0 0 0;
   position: relative;
+  height: 100%;
 }
 .main-content__title {
   font-family: Montserrat;
@@ -177,12 +186,13 @@ body {
 }
 
 .main__img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  width: 48%;
+  display: none;
+  height: 100%;
   z-index: -1;
+}
+
+.main__img img {
+  width: 100%;
 }
 
 .modal {
@@ -300,19 +310,42 @@ form {
   color: #B3B3B3;
 }
 
+@media (max-width: 1400px) {
+  .header {
+    background-position: top 69px right -200px;
+  }
+}
 @media (max-width: 1250px) {
   .main-content__title {
     font-size: 110px;
   }
-  .main__img {
-    overflow: hidden;
-  }
-  .main__img img {
-    position: absolute;
-    right: -200px;
-  }
 }
 @media (max-width: 900px) {
+  .header {
+    background: none;
+    height: auto;
+  }
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main__img {
+    display: block;
+    margin-top: 34px;
+    position: relative;
+    width: 100%;
+    border-radius: 0 0 3% 3%;
+  }
+  .main__img img {
+    position: relative;
+    right: 0;
+    width: 100%;
+  }
   .nav {
     display: none;
   }
@@ -366,27 +399,6 @@ form {
     display: block;
     margin-top: 50px;
   }
-  .main {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .main__img {
-    margin-top: 34px;
-    position: relative;
-    top: auto;
-    width: 100%;
-    border-radius: 0 0 3% 3%;
-  }
-  .main__img img {
-    position: relative;
-    right: 0;
-    width: 100%;
-  }
   .main-content__title {
     font-size: 90px;
   }
@@ -433,5 +445,8 @@ form {
   }
   .header-menu__info {
     display: none;
+  }
+  .modal-content {
+    padding: 20px;
   }
 }
